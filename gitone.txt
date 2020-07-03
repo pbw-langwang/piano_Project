@@ -2,3 +2,4 @@ I come git first time!
 git is a free!
 three try change!
 try diff!
+try stage！
