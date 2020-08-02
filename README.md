@@ -6,4 +6,7 @@
 
 操作示例：
 
-*$git clone git@github.com:pbw-langwang/Git_warehouse.git
+* $git clone git@github.com:pbw-langwang/Git_warehouse.git
+
+## 注意
+当前版本，firefox会出现拖动产生新页面的bug
