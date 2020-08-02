@@ -58,8 +58,8 @@ function show2(element) {
     let index2 = element.dataset.index2;
     let b = document.querySelectorAll(".head_end_video");
     let a = b[index2];
-    let c = a.parentElement.parentElement.children[0].children[1];
-    // c是获取到video父元素的父元素中的img
+    let c = a.parentElement.children[0].children[1];
+    // c是获取到video父元素中的img
     this.change2(a, c);
 }
 
