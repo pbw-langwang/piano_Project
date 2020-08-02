@@ -29,11 +29,14 @@ function move(event) {
 
 function allowDrop(ev) {
     ev.preventDefault();
+    ev.stopPropagation();
 }
 
 function drop(ev) {
     ev.preventDefault();
+    ev.stopPropagation();
     // 阻止浏览器对拖动的默认处理，但是firefox有点小bug
+    // 加上ev.stopPropagation();已解决firefox的bug
     var data = ev.dataTransfer.getData("Text");
     if (variable.bool) {
         ev.target.appendChild(document.getElementById(data));
@@ -44,6 +47,7 @@ function drop(ev) {
 
 function drop2(ev) {
     ev.preventDefault();
+    ev.stopPropagation();
     var data = ev.dataTransfer.getData("Text");
     let data_id = ev.target.dataset.id;
     if (!variable.bool && data === data_id) {
