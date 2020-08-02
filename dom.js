@@ -1,5 +1,6 @@
 let variable = {
     bool: true,
+    pli: ''//不能只写一个pli，必须赋值，即使是空
 }
 //es6的命名空间
 
@@ -79,11 +80,16 @@ function playaudio(event) {
     for (i = 0; i < arr.length; i++) {
         arr[i].currentTime = 0; //设置时间为0，并暂停全部
         arr[i].pause();
+        if (variable.pli) {//把variable换成this也可以
+            variable.pli.style.setProperty("background-color", "white");
+        }
     }
     for (i = 0; i < arr.length; i++) {
         if (parseInt(arr[i].dataset.keynub) === event.keyCode) {
             //通过keynub和keyCode的对应关系，判断哪一个播哦
             arr[i].play();
+            variable.pli = arr[i].parentElement;
+            variable.pli.style.setProperty("background-color", "rgb(128, 128, 128)");
         }
     }
 }
