@@ -5,10 +5,276 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>weekwork</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="dom.js"></script>
+    <noscript>
+        <div
+            style="width: 1000px;height:500px;background-color: aqua;display: flex;justify-content: center;align-items: center;">
+            <div style="width: 500px;height: 300px;background-color: pink;">
+                <h1>抱歉，你的浏览器不支持 JavaScript!</h1>
+                <p>难受≧ ﹏ ≦</p>
+            </div>
+        </div>
+    </noscript>
 </head>
 
-<body>
-
+<body onkeydown="playaudio(event)">
+    <div
+        style="background-image: url(img/light.jpg);background-repeat:no-repeat;background-size:100% 100%;width: 100%;height: 100%;">
+        <!-- head begin -->
+        <div class="head" style="display: flex;justify-content: space-around;">
+            <!-- head left -->
+            <div class="head_lelf">
+                <ul class="head_left_ul">
+                    <li>
+                        <div class="head_music_name">
+                            <img data-index="0" onclick="show1(this)" src="img/尖括号右.png">
+                            <p>两只老虎</p>
+                        </div>
+                        <div class="head_music" data-id="twotiger" style="width: 200px;height: 100px"
+                            ondrop="drop2(event)" ondragover="allowDrop(event)">
+                            <img id="twotiger" style="width: 100%;height: 100%;" ondragstart="move(event)"
+                                src="img/twotiger.jpg">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="head_music_name">
+                            <img data-index="1" onclick="show1(this)" src="img/尖括号右.png">
+                            <p>小星星</p>
+                        </div>
+                        <div class="head_music" data-id="star" style="width: 200px;height: 100px" ondrop="drop2(event)"
+                            ondragover="allowDrop(event)">
+                            <img id="star" style="width: 100%;height: 100%;" src="img/star.jpg"
+                                ondragstart="move(event)">
+                        </div>
+                    </li>
+                    <li>
+                        <div class=" head_music_name">
+                            <img data-index="2" onclick="show1(this)" src="img/尖括号右.png">
+                            <p>虫儿飞</p>
+                        </div>
+                        <!-- <div class="head_music">
+                            <img style="width: 200px;height: 100px" src="img/worm.jpg">
+                        </div> -->
+                        <div class="head_music" data-id="worm" style="width: 200px;height: 100px" ondrop="drop2(event)"
+                            ondragover="allowDrop(event)">
+                            <img id="worm" style="width: 100%;height: 100%" src="img/worm.jpg"
+                                ondragstart="move(event)">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- head center -->
+            <div class=" head_center"
+                style="width: 600px;height: 400px;position: relative;background-color: rgba(0, 89, 255,0.8);border: solid 3px blue;margin: auto 0;">
+                <div style="width: 600px;height: 350px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+                </div>
+                <p style="
+                    position: absolute;
+                    bottom: 0;
+                    color: white;
+                    font-size: 30px;
+                    font-weight: 500;
+                    width: 100%;
+                    height: 50px;
+                    text-align: center;
+                    margin: 0;
+                    background-color: aqua;">
+                    乐谱
+                </p>
+            </div>
+            <!-- head end -->
+            <div class="head_end">
+                <ul class="head_end_ul">
+                    <li>
+                        <div class="head_end_musicname" data-index2="0" onclick="show2(this)">
+                            <p>两只老虎</p>
+                            <img src="img/尖括号左.png">
+                        </div>
+                        <div data-id="twotiger2" style="width: 200px;height: 100px" class="head_end_video"
+                            ondrop="drop2(event)" ondragover="allowDrop(event)">
+                            <video id="twotiger2" draggable="true" style="width: 100%;height: 100%;" controls="controls"
+                                src="video/twotiger.mp4" ondragstart="move(event)"></video>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="head_end_musicname" data-index2="1" onclick="show2(this)">
+                            <p>小星星</p>
+                            <img src="img/尖括号左.png">
+                        </div>
+                        <div data-id="star2" style="width: 200px;height: 100px" class="head_end_video"
+                            ondrop="drop2(event)" ondragover="allowDrop(event)">
+                            <video id="star2" draggable="true" style="width: 100%;height: 100%;" src="video/star.mp4"
+                                controls="controls" ondragstart="move(event)"></video>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="head_end_musicname" data-index2="2" onclick="show2(this)">
+                            <p>虫儿飞</p>
+                            <img src="img/尖括号左.png">
+                        </div>
+                        <div data-id="worm2" style="width: 200px;height: 100px" class="head_end_video"
+                            ondrop="drop2(event)" ondragover="allowDrop(event)">
+                            <video id="worm2" draggable="true" style="width: 100%;height: 100%;" src="video/worm.mp4"
+                                controls="controls" ondragstart="move(event)"></video>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- end begin -->
+        <div class="end_div">
+            <ul style="display: flex;justify-content: space-around;align-items: center;">
+                <li>
+                    <p>1</p>
+                    <p>.</p>
+                    <p>.</p>
+                    <p>C+</p>
+                    <p class="key">Q</p>
+                    <audio data-keynub="81" src="audio/C+.mp3"></audio>
+                </li>
+                <li>
+                    <p>2</p>
+                    <p>.</p>
+                    <p>.</p>
+                    <p>D+</p>
+                    <p class="key">W</p>
+                    <audio data-keynub="87" src="audio/D+.mp3"></audio>
+                </li>
+                <li>
+                    <p>3</p>
+                    <p>.</p>
+                    <p>.</p>
+                    <p>E+</p>
+                    <p class="key">E</p>
+                    <audio data-keynub="69" src="audio/E+.mp3"></audio>
+                </li>
+                <li>
+                    <p>4</p>
+                    <p>.</p>
+                    <p>.</p>
+                    <p>F+</p>
+                    <p class="key">R</p>
+                    <audio data-keynub="82" src="audio/F+.mp3"></audio>
+                </li>
+                <li>
+                    <p>5</p>
+                    <p>.</p>
+                    <p>.</p>
+                    <p>G+</p>
+                    <p class="key">T</p>
+                    <audio data-keynub="84" src="audio/G+.mp3"></audio>
+                </li>
+                <li>
+                    <p>6</p>
+                    <p>.</p>
+                    <p>.</p>
+                    <p>A+</p>
+                    <p class="key">Y</p>
+                    <audio data-keynub="89" src="audio/A+.mp3"></audio>
+                </li>
+                <li>
+                    <p>7</p>
+                    <p>.</p>
+                    <p>.</p>
+                    <p>B+</p>
+                    <p class="key">U</p>
+                    <audio data-keynub="85" src="audio/B+.mp3"></audio>
+                </li>
+                <li>
+                    <p>1</p>
+                    <p>C</p>
+                    <p class="key">A</p>
+                    <audio data-keynub="65" src="audio/C.mp3"></audio>
+                </li>
+                <li>
+                    <p>2</p>
+                    <p>D</p>
+                    <p class="key">S</p>
+                    <audio data-keynub="83" src="audio/D.mp3"></audio>
+                </li>
+                <li>
+                    <p>3</p>
+                    <p>E</p>
+                    <p class="key">D</p>
+                    <audio data-keynub="68" src="audio/E.mp3"></audio>
+                </li>
+                <li>
+                    <p>4</p>
+                    <p>F</p>
+                    <p class="key">F</p>
+                    <audio data-keynub="70" src="audio/F.mp3"></audio>
+                </li>
+                <li>
+                    <p>5</p>
+                    <p>G</p>
+                    <p class="key">G</p>
+                    <audio data-keynub="71" src="audio/G.mp3"></audio>
+                </li>
+                <li>
+                    <p>6</p>
+                    <p>A</p>
+                    <p class="key">H</p>
+                    <audio data-keynub="72" src="audio/A.mp3"></audio>
+                </li>
+                <li>
+                    <p>7</p>
+                    <p>B</p>
+                    <p class="key">J</p>
+                    <audio data-keynub="74" src="audio/B.mp3"></audio>
+                </li>
+                <li>
+                    <p>1</p>
+                    <p>.</p>
+                    <p>C-</p>
+                    <p class="key">Z</p>
+                    <audio data-keynub="90" src="audio/C-.mp3"></audio>
+                </li>
+                <li>
+                    <p>2</p>
+                    <p>.</p>
+                    <p>D-</p>
+                    <p class="key">X</p>
+                    <audio data-keynub="88" src="audio/D-.mp3"></audio>
+                </li>
+                <li>
+                    <p>3</p>
+                    <p>.</p>
+                    <p>E-</p>
+                    <p class="key">C</p>
+                    <audio data-keynub="67" src="audio/E-.mp3"></audio>
+                </li>
+                <li>
+                    <p>4</p>
+                    <p>.</p>
+                    <p>F-</p>
+                    <p class="key">V</p>
+                    <audio data-keynub="86" src="audio/F-.mp3"></audio>
+                </li>
+                <li>
+                    <p>5</p>
+                    <p>.</p>
+                    <p>G-</p>
+                    <p class="key">B</p>
+                    <audio data-keynub="66" src="audio/G-.mp3"></audio>
+                </li>
+                <li>
+                    <p>6</p>
+                    <p>.</p>
+                    <p>A-</p>
+                    <p class="key">N</p>
+                    <audio data-keynub="78" src="audio/A-.mp3"></audio>
+                </li>
+                <li>
+                    <p>7</p>
+                    <p>.</p>
+                    <p>B-</p>
+                    <p class="key">M</p>
+                    <audio data-keynub="77" src="audio/B-.mp3"></audio>
+                </li>
+            </ul>
+        </div>
+    </div>c
 </body>
 
 </html>
