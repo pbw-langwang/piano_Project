@@ -1,6 +1,7 @@
 let variable = {
     bool: true,
-    pli: ''//不能只写一个pli，必须赋值，即使是空
+    pli: '',//不能只写一个pli，必须赋值，即使是空
+    array: [],
 }
 //es6的命名空间
 
@@ -81,17 +82,34 @@ function change2(a, element) {
 
 function playaudio(event) {
     let arr = document.querySelectorAll("audio");
-    for (i = 0; i < arr.length; i++) {
-        arr[i].currentTime = 0; //设置时间为0，并暂停全部
-        arr[i].pause();
-        if (variable.pli) {//把variable换成this也可以
-            variable.pli.style.setProperty("background-color", "white");
+    // for (i = 0; i < arr.length; i++) {
+    //     arr[i].currentTime = 0; //设置时间为0，并暂停全部
+    //     arr[i].pause();
+    if (variable.pli) {//把variable换成this也可以
+        variable.pli.style.setProperty("background-color", "white");
+    }
+    // }
+    for (i = 0; i < variable.array.length; i++) {
+        if (variable.array[i] === event.keyCode) {
+            for (j = 0; j < arr.length; j++) {
+                if (parseInt(arr[j].dataset.keynub) === event.keyCode) {
+                    arr[j].currentTime = 0;
+                    arr[i].pause();
+                }
+            }
         }
     }
     for (i = 0; i < arr.length; i++) {
         if (parseInt(arr[i].dataset.keynub) === event.keyCode) {
             //通过keynub和keyCode的对应关系，判断哪一个播哦
             arr[i].play();
+            if (variable.array.length < 6) {
+                variable.array.push(parseInt(arr[i].dataset.keynub));
+            } else {
+                variable.array.shift();
+                variable.array.push(parseInt(arr[i].dataset.keynub));
+            };
+            console.log(variable.array);
             variable.pli = arr[i].parentElement;
             variable.pli.style.setProperty("background-color", "rgb(128, 128, 128)");
         }
