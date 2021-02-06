@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>weekwork</title>
+    <title>play the piano</title>
+    <link rel="iocn" href="img/piano.jpg">
     <link rel="stylesheet" href="style.css">
     <script src="dom.js"></script>
     <noscript>
@@ -12,15 +13,14 @@
             style="width: 1000px;height:500px;background-color: aqua;display: flex;justify-content: center;align-items: center;">
             <div style="width: 500px;height: 300px;background-color: pink;">
                 <h1>抱歉，你的浏览器不支持 JavaScript!</h1>
-                <p>难受≧ ﹏ ≦</p>
+                <h3>难受≧ ﹏ ≦</h3>
             </div>
         </div>
     </noscript>
 </head>
 
 <body onkeydown="playaudio(event)">
-    <div
-        style="background-image: url(img/light.jpg);background-repeat:no-repeat;background-size:100% 100%;width: 100%;height: 100%;">
+    <div style="background-image: url(img/light.jpg);background-repeat:no-repeat;background-size:100% 100%;width: 100%;height: 100%;">
         <!-- head begin -->
         <div class="head" style="display: flex;justify-content: space-around;">
             <!-- head left -->
@@ -31,10 +31,8 @@
                             <img data-index="0" onclick="show1(this)" src="img/尖括号右.png">
                             <p>两只老虎</p>
                         </div>
-                        <div class="head_music" data-id="twotiger" style="width: 200px;height: 100px"
-                            ondrop="drop2(event)" ondragover="allowDrop(event)">
-                            <img id="twotiger" style="width: 100%;height: 100%;" ondragstart="move(event)"
-                                src="img/twotiger.jpg">
+                        <div class="head_music" data-id="twotiger" style="width: 200px;height: 100px" ondrop="drop2(event)" ondragover="allowDrop(event)">
+                            <img id="twotiger" style="width: 100%;height: 100%;" ondragstart="move(event)" src="img/twotiger.jpg">
                         </div>
                     </li>
                     <li>
@@ -42,10 +40,8 @@
                             <img data-index="1" onclick="show1(this)" src="img/尖括号右.png">
                             <p>小星星</p>
                         </div>
-                        <div class="head_music" data-id="star" style="width: 200px;height: 100px" ondrop="drop2(event)"
-                            ondragover="allowDrop(event)">
-                            <img id="star" style="width: 100%;height: 100%;" src="img/star.jpg"
-                                ondragstart="move(event)">
+                        <div class="head_music" data-id="star" style="width: 200px;height: 100px" ondrop="drop2(event)" ondragover="allowDrop(event)">
+                            <img id="star" style="width: 100%;height: 100%;" src="img/star.jpg" ondragstart="move(event)">
                         </div>
                     </li>
                     <li>
@@ -53,17 +49,14 @@
                             <img data-index="2" onclick="show1(this)" src="img/尖括号右.png">
                             <p>虫儿飞</p>
                         </div>
-                        <div class="head_music" data-id="worm" style="width: 200px;height: 100px" ondrop="drop2(event)"
-                            ondragover="allowDrop(event)">
-                            <img id="worm" style="width: 100%;height: 100%" src="img/worm.jpg"
-                                ondragstart="move(event)">
+                        <div class="head_music" data-id="worm" style="width: 200px;height: 100px" ondrop="drop2(event)" ondragover="allowDrop(event)">
+                            <img id="worm" style="width: 100%;height: 100%" src="img/worm.jpg" ondragstart="move(event)">
                         </div>
                     </li>
                 </ul>
             </div>
             <!-- head center -->
-            <div class=" head_center"
-                style="width: 600px;height: 400px;position: relative;background-color: rgba(0, 89, 255,0.8);border: solid 3px blue;margin: auto 0;">
+            <div class=" head_center" style="width: 600px;height: 400px;position: relative;background-color: rgba(0, 89, 255,0.8);border: solid 3px blue;margin: auto 0;">
                 <div style="width: 600px;height: 350px;" ondrop="drop(event)" ondragover="allowDrop(event)">
                 </div>
                 <p style="
@@ -88,10 +81,8 @@
                             <p>两只老虎</p>
                             <img src="img/尖括号左.png">
                         </div>
-                        <div data-id="twotiger2" style="width: 200px;height: 100px" class="head_end_video"
-                            ondrop="drop2(event)" ondragover="allowDrop(event)">
-                            <video id="twotiger2" draggable="true" style="width: 100%;height: 100%;" controls="controls"
-                                src="video/twotiger.mp4" ondragstart="move(event)"></video>
+                        <div data-id="twotiger2" style="width: 200px;height: 100px" class="head_end_video" ondrop="drop2(event)" ondragover="allowDrop(event)">
+                            <video id="twotiger2" draggable="true" style="width: 100%;height: 100%;" controls="controls" src="video/twotiger.mp4" ondragstart="move(event)"></video>
                         </div>
                     </li>
                     <li>
@@ -99,10 +90,8 @@
                             <p>小星星</p>
                             <img src="img/尖括号左.png">
                         </div>
-                        <div data-id="star2" style="width: 200px;height: 100px" class="head_end_video"
-                            ondrop="drop2(event)" ondragover="allowDrop(event)">
-                            <video id="star2" draggable="true" style="width: 100%;height: 100%;" src="video/star.mp4"
-                                controls="controls" ondragstart="move(event)"></video>
+                        <div data-id="star2" style="width: 200px;height: 100px" class="head_end_video" ondrop="drop2(event)" ondragover="allowDrop(event)">
+                            <video id="star2" draggable="true" style="width: 100%;height: 100%;" src="video/star.mp4" controls="controls" ondragstart="move(event)"></video>
                         </div>
                     </li>
                     <li>
@@ -110,10 +99,8 @@
                             <p>虫儿飞</p>
                             <img src="img/尖括号左.png">
                         </div>
-                        <div data-id="worm2" style="width: 200px;height: 100px" class="head_end_video"
-                            ondrop="drop2(event)" ondragover="allowDrop(event)">
-                            <video id="worm2" draggable="true" style="width: 100%;height: 100%;" src="video/worm.mp4"
-                                controls="controls" ondragstart="move(event)"></video>
+                        <div data-id="worm2" style="width: 200px;height: 100px" class="head_end_video" ondrop="drop2(event)" ondragover="allowDrop(event)">
+                            <video id="worm2" draggable="true" style="width: 100%;height: 100%;" src="video/worm.mp4" controls="controls" ondragstart="move(event)"></video>
                         </div>
                     </li>
                 </ul>
