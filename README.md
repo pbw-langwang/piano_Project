@@ -6,7 +6,7 @@
 
 操作示例：
 
-* $git clone git@github.com:pbw-langwang/Git_warehouse.git
+* $git clone git@github.com:pbw-langwang/piano_Project.git
 * $ git switch -c dev origin/dev
 
 详细细节：https://blog.csdn.net/langwang_100/article/details/107354013
