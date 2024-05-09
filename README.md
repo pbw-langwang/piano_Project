@@ -1,6 +1,7 @@
-# 我的第一个 GitHub 项目
+# piano 项目
 
 这个项目是一个钢琴项目，21 个键，对应三组音阶（C2.....B2）(C3....B3)(C4.......B4)
+This project is a piano project with 21 keys corresponding to three sets of scales (C2... B2) (C3... B3) (C4... B4)
 
 ## 克隆版本库
 
