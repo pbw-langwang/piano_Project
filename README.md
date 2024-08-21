@@ -12,6 +12,8 @@ This project is a piano project with 21 keys corresponding to three sets of scal
 
 详细细节：https://blog.csdn.net/langwang_100/article/details/107354013
 
+需要把整个项目拖入 vscode，并使用 Live Serve 运行，不然会出现 CORS！
+
 ## 注意
 
 ~~当前版本，firefox 会出现拖动产生新页面的 bug~~（已解决）
@@ -20,6 +22,8 @@ Firefox 运行卡顿，goole 较为流畅！
 
 解决了合音问题！
 
-解决了音频不对问题！
+感觉音阶不太对，需要自己寻找对应的音频！
 
 添加音频可视化！(但是快速或者连续几个键一起会产生有的不会绘制的问题)
+
+快速按会有音频卡死，稍等后才能接着演奏的 bug！
