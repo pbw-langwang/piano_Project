@@ -5,6 +5,7 @@ let variable = {
 };
 //es6的命名空间
 
+// 改变箭头
 function show1(element) {
   let index = element.dataset.index;
   let b = document.querySelectorAll(".head_music");
@@ -12,7 +13,6 @@ function show1(element) {
   // 通过data-index来知道点击的是哪一个
   this.change(a, element);
 }
-
 function change(a, element) {
   //   console.log(a, element.childNodes);
   if (a.style.display === "none" || a.style.display === "") {
@@ -24,10 +24,13 @@ function change(a, element) {
   }
 }
 
+// event.dataTransfer 是一个 DataTransfer 对象，用于保存拖放操作期间传输的数据
+// 当用户开始拖动一个元素时，这个函数会把该元素的 ID 存储起来，以便在拖放操作的后续步骤中使用。
 function move(event) {
   event.dataTransfer.setData("Text", event.target.id);
 }
 
+// 阻止默认事件，让元素可以接收拖拽的元素
 function allowDrop(ev) {
   ev.preventDefault();
   ev.stopPropagation();
@@ -36,8 +39,8 @@ function allowDrop(ev) {
 function drop(ev) {
   ev.preventDefault();
   ev.stopPropagation();
-  // 阻止浏览器对拖动的默认处理，但是firefox有点小bug
-  // 加上ev.stopPropagation();已解决firefox的bug
+  // 阻止浏览器对拖动的默认处理
+  // 加上 ev.stopPropagation(); 已解决firefox的bug
   var data = ev.dataTransfer.getData("Text");
   if (variable.bool) {
     ev.target.appendChild(document.getElementById(data));
@@ -59,6 +62,7 @@ function drop2(ev) {
 }
 // 设置一个全局互斥变量，以防止多次拖动的bug
 
+// 改变箭头2
 function show2(element) {
   let index2 = element.dataset.index2;
   let b = document.querySelectorAll(".head_end_video");
@@ -67,7 +71,6 @@ function show2(element) {
   // c是获取到video父元素中的img
   this.change2(a, c);
 }
-
 function change2(a, element) {
   if (a.style.display === "none" || a.style.display === "") {
     // 第一次a.style.display是空值
